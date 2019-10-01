@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Routes
+app.use("/admin", require("./routes/admin"));
 app.use("/", require("./routes/index"));
 
 const PORT = process.env.PORT || 6969;

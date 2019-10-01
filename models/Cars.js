@@ -10,27 +10,27 @@ const CarSchema = new mongoose.Schema({
     required: true
   },
   mileage: {
-    type: String,
+    type: Number,
     required: true
   },
   cylinders: {
-    type: String,
+    type: Number,
     required: true
   },
   clearance: {
-    type: String,
+    type: Number,
     required: true
   },
   horsepower: {
-    type: String,
+    type: Number,
     required: true
   },
   topspeed: {
-    type: String,
+    type: Number,
     required: true
   },
   airbags: {
-    type: String,
+    type: Number,
     required: true
   },
   fueltype: {

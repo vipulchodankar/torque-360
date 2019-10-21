@@ -6,14 +6,26 @@ const passport = require("passport");
 const Admin = require("../models/Admin");
 
 // Login Page
-router.get("/login", (req, res) => res.render("login", {user: req.user, res: res}));
+router.get("/login", (req, res) =>
+  res.render("login", { user: req.user, res: res })
+);
 
 // Register Page
-router.get("/register", (req, res) => res.render("register", {user: req.user, res: res}));
+router.get("/register", (req, res) =>
+  res.render("register", { user: req.user, res: res })
+);
 
 // Register Request
 router.post("/register", (req, res) => {
-  const { firstname, lastname, phonenumber, email, password, password2, adminsecret } = req.body;
+  const {
+    firstname,
+    lastname,
+    phonenumber,
+    email,
+    password,
+    password2,
+    adminsecret
+  } = req.body;
   let errors = [];
   // Check Required Fields
 

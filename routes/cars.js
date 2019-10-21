@@ -3,12 +3,18 @@ const router = express.Router();
 const { ensureAuthenticated } = require("../config/auth");
 const passport = require("passport");
 // Load User model
-const Car = require("../models/Cars");
+const Cars = require("../models/Cars");
 
 router.get("/add", ensureAuthenticated, (req, res) => res.render("addCar"));
 
-router.get("/view", (req, res) => {
-  res.render("view");
+router.get("/view", function(req, res) {
+  // mongoose operations are asynchronous, so you need to wait
+  Cars.find({}, function(err, data) {
+    // note that data is an array of objects, not a single object!
+    res.render("view", {
+      cars: data
+    });
+  });
 });
 
 router.post("/add", (req, res) => {

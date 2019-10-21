@@ -11,11 +11,11 @@ router.get("/dashboard", ensureAuthenticated, (req, res) =>
 );
 
 // For invalid URLS
-// router.get("*", (req, res) => {
-//   res.render("404", {
-//     link: "/",
-//     msg: "View Home?"
-//   });
-// });
+router.get("*", (req, res) => {
+  res.render("404", {
+    link: "/",
+    msg: "View Home?"
+  });
+});
 
 module.exports = router;

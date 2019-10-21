@@ -13,7 +13,7 @@ router.get("/register", (req, res) => res.render("register", {user: req.user, re
 
 // Register Request
 router.post("/register", (req, res) => {
-  const { firstname, lastname, email, password, password2 } = req.body;
+  const { firstname, lastname, phonenumber, email, password, password2 } = req.body;
   let errors = [];
   // Check Required Fields
   if (!firstname || !lastname || !email || !password || !password2) {
@@ -53,17 +53,17 @@ router.post("/register", (req, res) => {
 
     // Hash Password
     bcrypt.genSalt(10, (err, salt) =>
-      bcrypt.hash(newUser.password, salt, (err, hash) => {
+      bcrypt.hash(newAdmin.password, salt, (err, hash) => {
         if (err) throw err;
         // Set Password to Hashed
-        newUser.password = hash;
+        newAdmin.password = hash;
         // Save User
-        newUser
+        newAdmin
           .save()
           .then(user => {
             req.flash("success_msg", "You are now registered and can log in!");
 
-            res.redirect("/users/login");
+            res.redirect("/admin/login");
           })
           .catch(err => console.log(err));
       })

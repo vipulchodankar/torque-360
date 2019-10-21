@@ -3,7 +3,7 @@ const router = express.Router();
 const { ensureAuthenticated } = require("../config/auth");
 const passport = require("passport");
 // Load User model
-const Pothole = require("../models/Cars");
+const Car = require("../models/Cars");
 
 router.get("/add", ensureAuthenticated, (req, res) => res.render("addCar"));
 
@@ -12,7 +12,7 @@ router.get("/view", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
-  const { y, x, image } = req.body;
+  const { model, company } = req.body;
 
   let errors = [];
   // Check Required Fields
@@ -22,24 +22,22 @@ router.post("/add", (req, res) => {
 
   if (errors.length > 0) {
     // Send data back to register view
-    res.render("addPothole", {
+    res.render("addCar", {
       errors,
-      x,
-      y,
-      image
+      model,
+      company
     });
   } else {
-    // Create Pothole
+    // Create Car
     const newCar = new Cars({
-      x,
-      y,
-      image
+      model,
+      company
     });
 
-    newPothole
+    newCar
       .save()
       .then(() => {
-        req.flash("success_msg", "Another step towards a safer journey.");
+        req.flash(`success_msg`, `${model} was added!`);
 
         res.redirect("/cars/add");
       })
@@ -50,7 +48,7 @@ router.post("/add", (req, res) => {
 // For invalid URLS
 // router.get("*", (req, res) => {
 //   res.render("404", {
-//     link: "/potholes/view",
+//     link: "/Cars/view",
 //     msg: "View all instead?"
 //   });
 // });

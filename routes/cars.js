@@ -84,6 +84,7 @@ router.get("/view", function(req, res) {
   Cars.find({}, function(err, data) {
     // note that data is an array of objects, not a single object!
     res.render("view", {
+      user: req.user,
       cars: data
     });
   });

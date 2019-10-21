@@ -13,9 +13,14 @@ router.get("/register", (req, res) => res.render("register", {user: req.user, re
 
 // Register Request
 router.post("/register", (req, res) => {
-  const { firstname, lastname, phonenumber, email, password, password2 } = req.body;
+  const { firstname, lastname, phonenumber, email, password, password2, adminsecret } = req.body;
   let errors = [];
   // Check Required Fields
+
+  if (adminsecret != "torquewhy360") {
+    errors.push({ msg: "You cannot become an admin! Sed." });
+  }
+
   if (!firstname || !lastname || !email || !password || !password2) {
     errors.push({ msg: "Please fill in all fields." });
   }

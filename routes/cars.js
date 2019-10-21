@@ -6,7 +6,9 @@ const passport = require("passport");
 const Cars = require("../models/Cars");
 const Admin = require("../models/Admin");
 
-router.get("/add", ensureAuthenticated, (req, res) => res.render("addCar"));
+router.get("/add", ensureAuthenticated, (req, res) =>
+  res.render("addCar", { user: req.user })
+);
 
 router.post("/add", (req, res) => {
   let editor = req.user.email;
@@ -51,7 +53,8 @@ router.post("/add", (req, res) => {
       horsepower,
       topspeed,
       airbags,
-      fueltype
+      fueltype,
+      user: req.user
     });
   } else {
     // Create Car
@@ -90,9 +93,13 @@ router.get("/view", function(req, res) {
   });
 });
 
-router.get("/update", ensureAuthenticated, (req, res) => res.render("updateCar"));
+router.get("/update", ensureAuthenticated, (req, res) =>
+  res.render("updateCar", { user: req.user })
+);
 
-router.get("/delete", ensureAuthenticated, (req, res) => res.render("deleteCar"));
+router.get("/delete", ensureAuthenticated, (req, res) =>
+  res.render("deleteCar", { user: req.user })
+);
 
 // For invalid URLS
 // router.get("*", (req, res) => {

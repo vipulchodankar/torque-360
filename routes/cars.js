@@ -8,19 +8,9 @@ const Admin = require("../models/Admin");
 
 router.get("/add", ensureAuthenticated, (req, res) => res.render("addCar"));
 
-router.get("/view", function(req, res) {
-  // mongoose operations are asynchronous, so you need to wait
-  Cars.find({}, function(err, data) {
-    // note that data is an array of objects, not a single object!
-    res.render("view", {
-      cars: data
-    });
-  });
-});
-
 router.post("/add", (req, res) => {
   let editor = req.user.email;
-  
+
   const {
     model,
     company,
@@ -88,6 +78,20 @@ router.post("/add", (req, res) => {
       .catch(err => console.log(err));
   }
 });
+
+router.get("/view", function(req, res) {
+  // mongoose operations are asynchronous, so you need to wait
+  Cars.find({}, function(err, data) {
+    // note that data is an array of objects, not a single object!
+    res.render("view", {
+      cars: data
+    });
+  });
+});
+
+router.get("/update", ensureAuthenticated, (req, res) => res.render("updateCar"));
+
+router.get("/delete", ensureAuthenticated, (req, res) => res.render("deleteCar"));
 
 // For invalid URLS
 // router.get("*", (req, res) => {

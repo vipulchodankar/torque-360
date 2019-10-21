@@ -7,28 +7,115 @@
         </h3>
         <% include ./partials/messages %>
         <form action="/cars/add" method="POST">
+          <!-- car model -->
           <div class="form-group">
             <label for="model">model</label>
             <input
               type="text"
               id="model"
-              name="x"
+              name="model"
               class="form-control"
               placeholder="Enter model"
               value="<%= typeof model != 'undefined' ? model : '' %>"
             />
           </div>
+          <!-- car company -->
           <div class="form-group">
             <label for="company">company</label>
             <input
               type="text"
               id="company"
-              name="y"
+              name="company"
               class="form-control"
               placeholder="Enter company"
               value="<%= typeof company != 'undefined' ? company : '' %>"
             />
           </div>
+          <!-- car mileage -->
+          <div class="form-group">
+            <label for="mileage"></label>
+            <input
+              type="number"
+              id="mileage"
+              name="y"
+              class="form-control"
+              placeholder="Enter mileage"
+              value="<%= typeof mileage != 'undefined' ? mileage : '' %>"
+            />
+          </div>
+          <!-- car cylinders -->
+          <div class="form-group">
+            <label for="cylinders"></label>
+            <input
+              type="number"
+              id="cylinders"
+              name="y"
+              class="form-control"
+              placeholder="Enter cylinders"
+              value="<%= typeof cylinders != 'undefined' ? cylinders : '' %>"
+            />
+          </div>
+          <!-- car clearance -->
+          <div class="form-group">
+              <label for="clearance"></label>
+              <input
+                type="number"
+                id="clearance"
+                name="y"
+                class="form-control"
+                placeholder="Enter clearance"
+                value="<%= typeof clearance != 'undefined' ? clearance : '' %>"
+              />
+          </div>
+          <!-- car horsepower -->
+          <div class="form-group">
+              <label for="horsepower"></label>
+              <input
+                type="number"
+                id="horsepower"
+                name="y"
+                class="form-control"
+                placeholder="Enter horsepower"
+                value="<%= typeof horsepower != 'undefined' ? horsepower : '' %>"
+              />
+          </div>
+          <!-- car topspeed -->
+          <div class="form-group">
+              <label for="topspeed"></label>
+              <input
+                type="number"
+                id="topspeed"
+                name="y"
+                class="form-control"
+                placeholder="Enter topspeed"
+                value="<%= typeof topspeed != 'undefined' ? topspeed : '' %>"
+              />
+          </div>
+          <!-- car airbags -->
+          <div class="form-group">
+              <label for="airbags"></label>
+              <input
+                type="number"
+                id="airbags"
+                name="y"
+                class="form-control"
+                placeholder="Enter airbags"
+                value="<%= typeof airbags != 'undefined' ? airbags : '' %>"
+              />
+          </div>
+          <!-- car fueltype -->
+          <div class="form-group">
+              <label for="fueltype">fueltype</label>
+              <input
+                type="text"
+                id="fueltype"
+                name="fueltype"
+                class="form-control"
+                placeholder="Enter fueltype"
+                value="<%= typeof fueltype != 'undefined' ? fueltype : '' %>"
+              />
+            </div>
+
           <button type="submit" class="btn btn-primary btn-block">
             Add Car
           </button>

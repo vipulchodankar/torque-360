@@ -20,8 +20,7 @@ router.get("/view", function(req, res) {
 
 router.post("/add", (req, res) => {
   let editor = req.user.email;
-  console.log(`${editor} is adding a car`);
-
+  
   const {
     model,
     company,

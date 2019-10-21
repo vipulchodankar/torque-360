@@ -20,17 +20,17 @@ body {
   text-shadow: #000 2px 1px;
 }
 
-#mainNavbar #navBrand{
+#mainNavbar #navBrand {
   line-height: 64px;
   padding-top: 0;
   padding-bottom: 0;
 }
 
-#mainNavbar img{
+#mainNavbar img {
   height: 30px;
   padding: 0;
 }
 
-#dashboard .btn{
+#dashboard .btn {
   width: 140px;
 }

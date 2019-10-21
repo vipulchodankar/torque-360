@@ -3,8 +3,12 @@ body {
 }
 
 #header { 
-  height: 90vh;
+  height: 95vh;
   background-image: url("intro-car.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
   padding-top: 40vh;
   color: #fff;

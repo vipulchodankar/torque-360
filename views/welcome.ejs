@@ -1,18 +1,29 @@
-<h2>// This is the Welcome Page.</h2>
-
-<div class="jumbotron text-center">
+<div class="text-center" id="header">
   <h1>Torque 360</h1>
+  <hr>
   <p>* insert corny caption *</p>
 </div>
 
 <div class="row mt-5">
+  <!-- Admin Panel -->
   <div class="col-md-4 m-auto">
     <div class="card card-body text-center">
       <p>Create an account or login [Admin]</p>
       <a href="/admin/register" class="btn btn-primary btn-block mb-2"
-        >Register [will be removed later]</a
+        >Register</a
       >
       <a href="/admin/login" class="btn btn-info btn-block mb-2">Login</a>
+    </div>
+  </div>
+
+  <!-- User Login -->
+  <div class="col-md-4 m-auto">
+    <div class="card card-body text-white text-center bg-dark">
+      <p>Create an account or login [User]</p>
+      <a href="/user/register" class="btn btn-primary btn-block mb-2"
+        >Register</a
+      >
+      <a href="/user/login" class="btn btn-info btn-block mb-2">Login</a>
     </div>
   </div>
 </div>

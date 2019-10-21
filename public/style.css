@@ -2,9 +2,9 @@ body {
   font-size: 16px;
 }
 
-#header { 
+#header {
   height: 95vh;
-  background-image: url("intro-car.jpg");
+  background-image: url("/images/intro-car.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -18,4 +18,15 @@ body {
   font-size: 3.5rem;
   font-weight: 600;
   text-shadow: #000 2px 1px;
+}
+
+#mainNavbar #navBrand{
+  line-height: 64px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#mainNavbar img{
+  height: 30px;
+  padding: 0;
 }

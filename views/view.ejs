@@ -11,12 +11,13 @@
       <th>Topspeed</th>
       <th>Airbags</th>
       <th>Fuel Type</th>
+      <th>Added By</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr>
-      <% cars.forEach(function (car, index) { %>
+    <% cars.forEach(function (car, index) { %>
+      <tr>
         <td> <%= index+1 %> </td>
         <td> <%= car.model %> </td>
         <td> <%= car.company %> </td>
@@ -27,7 +28,8 @@
         <td> <%= car.topspeed %> </td>
         <td> <%= car.airbags %> </td>
         <td> <%= car.fueltype %> </td>
-      <% }) %>
-    </tr>
+        <td> <%= car.editor %> </td>
+      </tr>
+    <% }) %>
   </tbody>
 </table>

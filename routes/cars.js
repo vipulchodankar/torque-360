@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const { ensureAuthenticated } = require("../config/auth");
 const passport = require("passport");
-// Load User model
+// Load Cars model
 const Cars = require("../models/Cars");
+const Admin = require("../models/Admin");
 
 router.get("/add", ensureAuthenticated, (req, res) => res.render("addCar"));
 
@@ -18,6 +19,9 @@ router.get("/view", function(req, res) {
 });
 
 router.post("/add", (req, res) => {
+  let editor = req.user.email;
+  console.log(`${editor} is adding a car`);
+
   const {
     model,
     company,
@@ -71,7 +75,8 @@ router.post("/add", (req, res) => {
       horsepower,
       topspeed,
       airbags,
-      fueltype
+      fueltype,
+      editor
     });
 
     newCar

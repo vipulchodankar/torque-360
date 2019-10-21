@@ -37,6 +37,9 @@ const CarSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  editor: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now

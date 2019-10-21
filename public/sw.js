@@ -62,12 +62,16 @@ self.__precacheManifest = [
     "revision": "1e280052d361c95d0e23814a0e395fd8"
   },
   {
+    "url": "images/intro-car2.jpg",
+    "revision": "d33e4d69803abf9d5ce235b617cb45eb"
+  },
+  {
     "url": "manifest.json",
     "revision": "29bd91c7caa2aa7b8ece604d54e1bcf2"
   },
   {
     "url": "style.css",
-    "revision": "46ad85496ed7e153dbb3a3462f63a996"
+    "revision": "821c24d96f9c34d94ccbebe5c942756d"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

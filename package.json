@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js",
-    "build": "babel public/js/src --out-dir public/js/transpiled && workbox generate:sw"
+    "build": "workbox generateSW",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",

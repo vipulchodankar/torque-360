@@ -86,9 +86,13 @@ router.get("/view", function(req, res) {
   // mongoose operations are asynchronous, so you need to wait
   Cars.find({}, function(err, data) {
     // note that data is an array of objects, not a single object!
-    res.render("view", {
-      user: req.user,
-      cars: data
+    data.forEach((car) => {
+      if(car == req.params.model) {
+        res.render("view", {
+          user: req.user,
+          cars: car
+        });
+      }
     });
   });
 });
@@ -103,10 +107,11 @@ router.get("/search", (req, res) =>
 
 router.get("/searchCar", function(req, res) {
   // mongoose operations are asynchronous, so you need to wait
-  Cars.find({model: req.model}, function(err, data) {
+  Cars.find({}, function(err, data) {
     // note that data is an array of objects, not a single object!
     res.render("view", {
       user: req.user,
+      model: req.body,
       cars: data
     });
   });

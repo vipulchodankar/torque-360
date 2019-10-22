@@ -97,9 +97,20 @@ router.get("/update", ensureAuthenticated, (req, res) =>
   res.render("updateCar", { user: req.user })
 );
 
-router.get("/search", ensureAuthenticated, (req, res) =>
+router.get("/search", (req, res) =>
   res.render("searchCar", { user: req.user })
 );
+
+router.get("/searchCar", function(req, res) {
+  // mongoose operations are asynchronous, so you need to wait
+  Cars.find({model: req.model}, function(err, data) {
+    // note that data is an array of objects, not a single object!
+    res.render("view", {
+      user: req.user,
+      cars: data
+    });
+  });
+});
 
 router.get("/delete", ensureAuthenticated, (req, res) =>
   res.render("deleteCar", { user: req.user })

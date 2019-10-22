@@ -105,9 +105,13 @@ router.get("/searchCar", function(req, res) {
   // mongoose operations are asynchronous, so you need to wait
   Cars.find({}, function(err, data) {
     // note that data is an array of objects, not a single object!
-    res.render("view", {
-      user: req.user,
-      cars: data
+    data.forEach((car) => {
+      if( car == req.params.model) {
+        res.render("view", {
+          user: req.user,
+          cars: car
+        });
+      }
     });
   });
 });

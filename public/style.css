@@ -4,7 +4,7 @@ body {
 
 #header {
   height: 95vh;
-  background-image: url("/images/intro-car2.jpg");
+  background-image: url("/images/intro-car.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -33,4 +33,43 @@ body {
 
 #dashboard .btn {
   width: 140px;
+}
+
+#mainNavbar #brand-logo {
+  /* transform: rotate('45deg');
+  transition: all 0.4 ease-in; */
+
+  -webkit-animation: spin 3s linear infinite;
+  -moz-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+
+  -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(-45deg);
+  }
+
+  to {
+    -moz-transform: rotate(45deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(-45deg);
+  } to {
+    -webkit-transform: rotate(45deg);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  } to {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 }

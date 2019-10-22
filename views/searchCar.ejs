@@ -2,14 +2,14 @@
   <h2>Not implemented yet. Coming soon ;)</h2>
 
   <div class="container pt-5">
-    <div class="row my-5" id="deletePage">
+    <div class="row my-5" id="searchPage">
       <div class="col-md-6 m-auto">
         <div class="card card-body">
           <h1 class="text-center mb-3">
-            Delete a car
+            Search for a car
           </h1>
           <% include ./partials/messages %>
-          <form action="/admin/delete" method="DELETE">
+          <form action="/admin/search" method="GET">
             <div class="form-group">
               <label for="model">model</label>
               <input
@@ -21,7 +21,7 @@
               />
             </div>
             <button type="submit" class="btn btn-primary btn-block">
-              Delete
+              Search
             </button>
           </form>
         </div>

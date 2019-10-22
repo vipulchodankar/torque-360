@@ -80,6 +80,10 @@ self.__precacheManifest = [
     "revision": "29bd91c7caa2aa7b8ece604d54e1bcf2"
   },
   {
+    "url": "popper.min.js",
+    "revision": "56456db9d72a4b380ed3cb63095e6022"
+  },
+  {
     "url": "style.css",
     "revision": "6bd0834775c86651a13c5c6a06e9a2fa"
   }

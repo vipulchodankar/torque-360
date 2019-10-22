@@ -1,5 +1,34 @@
 <div class="container my-5 py-5">
   <h2>Not implemented yet. Coming soon ;)</h2>
 
+  <div class="container pt-5">
+      <div class="row my-5" id="updatePage">
+        <div class="col-md-6 m-auto">
+          <div class="card card-body">
+            <h1 class="text-center mb-3">
+              Update car details
+            </h1>
+            <% include ./partials/messages %>
+            <form action="/admin/update" method="PUT">
+              <div class="form-group">
+                <label for="model">model</label>
+                <input
+                  type="model"
+                  id="model"
+                  name="model"
+                  class="form-control"
+                  placeholder="Enter Car Model"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Update
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   <a href="/dashboard" class="btn btn-primary my-2">Go Back</a>
 </div>

@@ -97,6 +97,10 @@ router.get("/update", ensureAuthenticated, (req, res) =>
   res.render("updateCar", { user: req.user })
 );
 
+router.get("/search", ensureAuthenticated, (req, res) =>
+  res.render("searchCar", { user: req.user })
+);
+
 router.get("/delete", ensureAuthenticated, (req, res) =>
   res.render("deleteCar", { user: req.user })
 );

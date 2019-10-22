@@ -28,6 +28,10 @@ self.__precacheManifest = [
     "revision": "dba018fff7ba5880a93ee4253d923eb1"
   },
   {
+    "url": "bootstrap.min.js",
+    "revision": "e1d98d47689e00f8ecbc5d9f61bdb42e"
+  },
+  {
     "url": "images/addcar.png",
     "revision": "9df10754d7da270af68c56b7d718d68e"
   },
@@ -65,7 +69,11 @@ self.__precacheManifest = [
   },
   {
     "url": "images/intro-car.jpg",
-    "revision": "d33e4d69803abf9d5ce235b617cb45eb"
+    "revision": "5c35b014aa7e3c065fa16077d0f969ca"
+  },
+  {
+    "url": "jquery-3.4.1.slim.min.js",
+    "revision": "d9b11ca4d877c327889805b73bb79edd"
   },
   {
     "url": "manifest.json",

@@ -15,6 +15,7 @@ router.post("/add", (req, res) => {
 
   const {
     model,
+    variant,
     company,
     mileage,
     cylinders,
@@ -22,7 +23,9 @@ router.post("/add", (req, res) => {
     horsepower,
     topspeed,
     airbags,
-    fueltype
+    fueltype,
+    image,
+    price
   } = req.body;
 
   let errors = [];
@@ -36,7 +39,8 @@ router.post("/add", (req, res) => {
     !horsepower ||
     !topspeed ||
     !airbags ||
-    !fueltype
+    !fueltype ||
+    !price
   ) {
     errors.push({ msg: "Please fill in all fields." });
   }
@@ -46,6 +50,7 @@ router.post("/add", (req, res) => {
     res.render("addCar", {
       errors,
       model,
+      variant,
       company,
       mileage,
       cylinders,
@@ -54,12 +59,15 @@ router.post("/add", (req, res) => {
       topspeed,
       airbags,
       fueltype,
+      image,
+      price,
       user: req.user
     });
   } else {
     // Create Car
     const newCar = new Cars({
       model,
+      variant,
       company,
       mileage,
       cylinders,
@@ -68,6 +76,8 @@ router.post("/add", (req, res) => {
       topspeed,
       airbags,
       fueltype,
+      image,
+      price,
       editor
     });
 

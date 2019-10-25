@@ -1,9 +1,10 @@
 <div class="container">
-  <table class="table table-striped table-hover table-responsive-lg my-5 pb-5">
+  <table class="table table-striped table-hover table-responsive my-5 pb-5">
     <thead>
       <tr>
         <th>No.</th>
         <th>Model</th>
+        <th>Variant</th>
         <th>Company</th>
         <th>Mileage</th>
         <th>Cylinders</th>
@@ -11,26 +12,37 @@
         <th>Horsepower</th>
         <th>Topspeed</th>
         <th>Airbags</th>
-        <th>Fuel Type</th>
+        <th>FuelType</th>
+        <th>Image</th>
+        <th>Price</th>
         <th>Added By</th>
       </tr>
     </thead>
 
     <tbody>
       <% cars.forEach(function (car, index) { %>
-        <tr>
-          <td> <%= index+1 %> </td>
-          <td> <%= car.model %> </td>
-          <td> <%= car.company %> </td>
-          <td> <%= car.mileage %> </td>
-          <td> <%= car.cylinders %> </td>
-          <td> <%= car.clearance %> </td>
-          <td> <%= car.horsepower %> </td>
-          <td> <%= car.topspeed %> </td>
-          <td> <%= car.airbags %> </td>
-          <td> <%= car.fueltype %> </td>
-          <td> <%= car.editor %> </td>
-        </tr>
+      <tr>
+        <td><%= index+1 %></td>
+        <td><%= car.model %></td>
+        <td><%= car.variant %></td>
+        <td><%= car.company %></td>
+        <td><%= car.mileage %> KM/L</td>
+        <td><%= car.cylinders %></td>
+        <td><%= car.clearance %>cm</td>
+        <td><%= car.horsepower %> BHP</td>
+        <td><%= car.topspeed %> KM/H</td>
+        <td><%= car.airbags %></td>
+        <td><%= car.fueltype %></td>
+        <td>
+          <img
+            src="<%= car.image %>"
+            class="img-fluid"
+            alt="<%= car.model %>"
+          />
+        </td>
+        <td>₹<%= car.price %>L</td>
+        <td><%= car.editor %></td>
+      </tr>
       <% }) %>
     </tbody>
   </table>

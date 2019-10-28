@@ -5,9 +5,6 @@ const CarSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  variant: {
-    type: String  
-  },
   company: {
     type: String,
     required: true
@@ -40,15 +37,18 @@ const CarSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  image: {
-    type: String
-  },
   price: {
     type: Number,
     required: true
   },
+  image: {
+    type: String
+  },
   editor: {
     type: String
+  },
+  variant: {
+    type: String  
   },
   date: {
     type: Date,

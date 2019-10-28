@@ -10,22 +10,20 @@
           Enter Car Details
         </h3>
         <% include ./partials/messages %>
-        <form action="/cars/add" method="POST">
+        <form action="/cars/add" method="POST" class="form">
           <!-- car model -->
           <div class="form-group">
-            <label for="model">Model: </label>
             <input
               type="text"
               id="model"
               name="model"
               class="form-control"
-              placeholder="Enter model"
+              placeholder="Enter model *"
               value="<%= typeof model != 'undefined' ? model : '' %>"
             />
           </div>
           <!-- Car Variant -->
           <div class="form-group">
-            <label for="variant">Variant: </label>
             <input
               type="text"
               id="variant"
@@ -37,109 +35,98 @@
           </div>
           <!-- car company -->
           <div class="form-group">
-            <label for="company">Company: </label>
             <input
               type="text"
               id="company"
               name="company"
               class="form-control"
-              placeholder="Enter company"
+              placeholder="Enter company *"
               value="<%= typeof company != 'undefined' ? company : '' %>"
             />
           </div>
           <!-- car mileage -->
           <div class="form-group">
-            <label for="mileage">Mileage [ km/L ]: </label>
             <input
               type="number"
               id="mileage"
               name="mileage"
               class="form-control"
-              placeholder="Enter mileage"
+              placeholder="Enter mileage (km/l) *"
               step="0.01"
               value="<%= typeof mileage != 'undefined' ? mileage : '' %>"
             />
           </div>
           <!-- car cylinders -->
           <div class="form-group">
-            <label for="cylinders">Number of Cylinders: </label>
             <input
               type="number"
               id="cylinders"
               name="cylinders"
               class="form-control"
-              placeholder="Enter cylinders"
+              placeholder="Enter cylinders *"
               value="<%= typeof cylinders != 'undefined' ? cylinders : '' %>"
             />
           </div>
           <!-- car clearance -->
           <div class="form-group">
-            <label for="clearance">Clearance [ cm ]: </label>
             <input
               type="number"
               id="clearance"
               name="clearance"
               class="form-control"
-              placeholder="Enter clearance"
+              placeholder="Enter clearance (cm) *"
               step="0.01"
               value="<%= typeof clearance != 'undefined' ? clearance : '' %>"
             />
           </div>
           <!-- car horsepower -->
           <div class="form-group">
-            <label for="horsepower">Horsepower [ hp ]: </label>
             <input
               type="number"
               id="horsepower"
               name="horsepower"
               class="form-control"
-              placeholder="Enter horsepower"
+              placeholder="Enter horsepower (bhp) *"
               step="0.01"
               value="<%= typeof horsepower != 'undefined' ? horsepower : '' %>"
             />
           </div>
           <!-- car topspeed -->
           <div class="form-group">
-            <label for="topspeed">Top speed [ km/h ]: </label>
             <input
               type="number"
               id="topspeed"
               name="topspeed"
               class="form-control"
-              placeholder="Enter top speed"
+              placeholder="Enter top speed (km/h) *"
               step="0.01"
               value="<%= typeof topspeed != 'undefined' ? topspeed : '' %>"
             />
           </div>
           <!-- car airbags -->
           <div class="form-group">
-            <label for="airbags">Number of Airbags: </label>
             <input
               type="number"
               id="airbags"
               name="airbags"
               class="form-control"
-              placeholder="Enter airbags"
+              placeholder="Enter number of airbags *"
               value="<%= typeof airbags != 'undefined' ? airbags : '' %>"
             />
           </div>
           <!-- car fueltype -->
           <div class="form-group">
-            <label for="fueltype"
-              >Fueltype [ Petrol/ Diesel/ Hybrid/ Electric ]:
-            </label>
             <input
               type="text"
               id="fueltype"
               name="fueltype"
               class="form-control"
-              placeholder="Enter fueltype"
+              placeholder="Enter fueltype *"
               value="<%= typeof fueltype != 'undefined' ? fueltype : '' %>"
             />
           </div>
           <!-- car image link -->
           <div class="form-group">
-            <label for="image">image [link]: </label>
             <input
               type="text"
               id="image"
@@ -151,13 +138,12 @@
           </div>
           <!-- car price -->
           <div class="form-group">
-            <label for="price">Price [Lakhs]: </label>
             <input
               type="number"
               id="price"
               name="price"
               class="form-control"
-              placeholder="Enter price"
+              placeholder="Enter price *"
               value="<%= typeof price != 'undefined' ? price : '' %>"
               step="0.00000001"
             />

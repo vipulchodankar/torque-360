@@ -34,14 +34,20 @@
         <td><%= car.airbags %></td>
         <td><%= car.fueltype %></td>
         <td>
-          <img
-            src="<%= car.image %>"
-            class="img-fluid"
-            alt="<%= car.model %>"
-          />
+          <a href="<%= car.image %>"
+            ><img
+              src="<%= car.image %>"
+              class="img-fluid"
+              alt="<%= car.model %>"
+            />
+          </a>
         </td>
         <td>₹<%= car.price %>L</td>
-        <td><%= car.editor %></td>
+        <td>
+          <a href="mailto:<%= car.editor %>" target="_blank"
+            ><%= car.editor %></a
+          >
+        </td>
       </tr>
       <% }) %>
     </tbody>

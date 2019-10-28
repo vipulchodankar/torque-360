@@ -8,9 +8,8 @@
             Search for a car
           </h1>
           <% include ./partials/messages %>
-          <form action="/admin/searchCar" method="GET">
+          <form action="/cars/searchCar" method="POST">
             <div class="form-group">
-              <label for="model">model</label>
               <input
                 type="model"
                 id="model"

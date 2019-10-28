@@ -111,18 +111,21 @@ router.get("/search", (req, res) =>
   res.render("searchCar", { user: req.user })
 );
 
-router.get("/searchCar", function(req, res) {
-  // mongoose operations are asynchronous, so you need to wait
-  Cars.find({}, function(err, data) {
-    // note that data is an array of objects, not a single object!
-    data.forEach(car => {
-      if (car == req.params.model) {
-        res.render("view", {
-          user: req.user,
-          cars: car
-        });
-      }
-    });
+router.post("/searchCar", function(req, res) {
+  const {model}  = req.body;
+  Cars.find({ model: model }, function(err, data) {
+    if (data == ``) {
+      // return next(err);
+      req.flash("error_msg", `${model} not found`);
+      res.render("searchCar", { user: req.user });
+    } else {
+      req.flash(`success_msg`, `${model} was found!`);
+      res.render("view", {
+        user: req.user,
+        cars: data
+      });
+      // res.redirect("/cars/search");
+    }
   });
 });
 

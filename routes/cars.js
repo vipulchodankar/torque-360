@@ -115,8 +115,8 @@ router.get("/searchCar", function(req, res) {
   // mongoose operations are asynchronous, so you need to wait
   Cars.find({}, function(err, data) {
     // note that data is an array of objects, not a single object!
-    data.forEach((car) => {
-      if( car == req.params.model) {
+    data.forEach(car => {
+      if (car == req.params.model) {
         res.render("view", {
           user: req.user,
           cars: car
@@ -129,6 +129,20 @@ router.get("/searchCar", function(req, res) {
 router.get("/delete", ensureAuthenticated, (req, res) =>
   res.render("deleteCar", { user: req.user })
 );
+
+router.post("/delete", ensureAuthenticated, (req, res) => {
+  const { model } = req.body;
+  Cars.findOneAndDelete({ model: model }, function(err) {
+    if (err) {
+      // return next(err);
+      req.flash("error_msg", `${model} not found`);
+      res.redirect("/cars/delete");
+    } else {
+      req.flash(`success_msg`, `${model} was deleted!`);
+      res.redirect("/cars/delete");
+    }
+  });
+});
 
 // For invalid URLS
 // router.get("*", (req, res) => {

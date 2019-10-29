@@ -2,33 +2,48 @@
   <h2>Not implemented yet. Coming soon ;)</h2>
 
   <div class="container pt-5">
-      <div class="row my-5" id="updatePage">
-        <div class="col-md-6 m-auto">
-          <div class="card card-body">
-            <h1 class="text-center mb-3">
-              Update car details
-            </h1>
-            <% include ./partials/messages %>
-            <form action="/admin/update" method="PUT">
-              <div class="form-group">
-                <label for="model">model</label>
-                <input
-                  type="model"
-                  id="model"
-                  name="model"
-                  class="form-control"
-                  placeholder="Enter Car Model"
-                />
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">
-                Update
-              </button>
-            </form>
-          </div>
+    <div class="row my-5" id="updatePage">
+      <div class="col-md-6 m-auto">
+        <div class="card card-body">
+          <h1 class="text-center mb-3">
+            Update car details
+          </h1>
+          <% include ./partials/messages %>
+          <form action="/cars/update" method="POST">
+            <div class="form-group">
+              <input
+                type="model"
+                id="model"
+                name="model"
+                class="form-control"
+                placeholder="Enter Model of the car to be updated"
+                value="<%= typeof model != 'undefined' ? model : '' %>"
+              />
+              <select name="field" id="field" class="custom-select my-2">
+                <option selected>Select field to update</option>
+                <option value="model">Model</option>
+                <option value="variant">Variant</option>
+                <option value="company">Company</option>
+                <option value="fueltype">Fuel Type</option>
+                <option value="image">Image Link</option>
+              </select>
+              <input
+                type="updatedValue"
+                id="updatedValue"
+                name="updatedValue"
+                class="form-control"
+                placeholder="Enter the updated value"
+                value="<%= typeof updatedValue != 'undefined' ? updatedValue : '' %>"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Update
+            </button>
+          </form>
         </div>
       </div>
     </div>
-
+  </div>
 
   <a href="/dashboard" class="btn btn-primary my-2">Go Back</a>
 </div>

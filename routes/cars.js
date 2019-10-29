@@ -107,12 +107,93 @@ router.get("/update", ensureAuthenticated, (req, res) =>
   res.render("updateCar", { user: req.user })
 );
 
+router.post("/update", ensureAuthenticated, (req, res) => {
+  const { model, field, updatedValue } = req.body;
+  // console.log(
+  //   `model: ${model} \n field: ${field} \n updatedValue: ${updatedValue}`
+  // );
+
+  let errors = [];
+  // Check Required Fields
+  if (!model || !field || !updatedValue) {
+    errors.push({ msg: "Please fill in all fields." });
+  }
+
+  if (errors.length > 0) {
+    // Send data back to addCar view
+    res.render("updateCar", {
+      errors,
+      model,
+      field,
+      updatedValue,
+      user: req.user
+    });
+  } else {
+    switch (field) {
+      case "model": {
+        console.log("model update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { model: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      case "variant": {
+        console.log("variant update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { variant: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      case "company": {
+        console.log("company update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { company: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      case "fueltype": {
+        console.log("fueltype update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { fueltype: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      default:
+        console.log("default case");
+    }
+  }
+});
+
 router.get("/search", (req, res) =>
   res.render("searchCar", { user: req.user })
 );
 
 router.post("/search", function(req, res) {
-  const {model}  = req.body;
+  const { model } = req.body;
   Cars.find({ model: model }, function(err, data) {
     if (data == ``) {
       // return next(err);

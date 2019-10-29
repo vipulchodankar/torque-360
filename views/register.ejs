@@ -8,7 +8,6 @@
         <% include ./partials/messages %>
         <form action="/admin/register" method="POST">
           <div class="form-group">
-            <label for="firstname">First Name</label>
             <input
               type="firstname"
               id="firstname"
@@ -19,7 +18,6 @@
             />
           </div>
           <div class="form-group">
-            <label for="lastname">Last Name</label>
             <input
               type="lastname"
               id="lastname"
@@ -30,7 +28,6 @@
             />
           </div>
           <div class="form-group">
-            <label for="phonename">Phone Number</label>
             <input
               type="phonenumber"
               id="phonename"
@@ -41,7 +38,6 @@
             />
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
             <input
               type="email"
               id="email"
@@ -52,18 +48,16 @@
             />
           </div>
           <div class="form-group">
-            <label for="password">Password</label>
             <input
               type="password"
               id="password"
               name="password"
               class="form-control"
-              placeholder="Create Password"
+              placeholder="Enter Password"
               value="<%= typeof password != 'undefined' ? password : '' %>"
             />
           </div>
           <div class="form-group">
-            <label for="password2">Confirm Password</label>
             <input
               type="password"
               id="password2"
@@ -74,7 +68,6 @@
             />
           </div>
           <div class="form-group">
-            <label for="adminsecret">Admin Secret Code: </label>
             <input
               type="adminsecret"
               id="adminsecret"

@@ -15,7 +15,8 @@
                 id="model"
                 name="model"
                 class="form-control"
-                placeholder="Enter Car Model"
+                placeholder="Enter Car Model *"
+                value="<%= typeof model != 'undefined' ? model : '' %>"
               />
             </div>
             <button type="submit" class="btn btn-primary btn-block">

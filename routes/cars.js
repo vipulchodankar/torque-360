@@ -169,6 +169,84 @@ router.post("/update", ensureAuthenticated, (req, res) => {
         );
         break;
       }
+      case "mileage": {
+        console.log("mileage update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { mileage: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      case "cylinders": {
+        console.log("company update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { cylinders: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      case "clearance": {
+        console.log("clearance update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { clearance: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      case "horsepower": {
+        console.log("horsepower update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { horsepower: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      case "topspeed": {
+        console.log("topspeed update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { topspeed: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      case "airbags": {
+        console.log("airbags update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { airbags: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
       case "fueltype": {
         console.log("fueltype update selected");
         Cars.findOneAndUpdate(
@@ -182,8 +260,38 @@ router.post("/update", ensureAuthenticated, (req, res) => {
         );
         break;
       }
-      default:
+      case "image": {
+        console.log("image link update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { image: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      case "price": {
+        console.log("price update selected");
+        Cars.findOneAndUpdate(
+          { model: model },
+          { price: updatedValue },
+          function(err, product) {
+            if (err) return next(err);
+            req.flash(`success_msg`, `${model} was updated!`);
+            res.redirect("/cars/update");
+          }
+        );
+        break;
+      }
+      default:{
         console.log("default case");
+        req.flash("error_msg", `${model} was not updated!`);
+        res.redirect("/cars/update");
+      }
+        
     }
   }
 });

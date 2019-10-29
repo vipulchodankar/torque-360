@@ -1,7 +1,7 @@
 {
   "name": "torque-360",
-  "version": "1.0.0",
-  "description": "SE Project",
+  "version": "1.0.1",
+  "description": "Second Year Software Engineering Project",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -13,8 +13,8 @@
     "url": "git+https://github.com/vipulchodankar/torque-360.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Vipul Chodankar",
+  "license": "GNU GPL V3",
   "bugs": {
     "url": "https://github.com/vipulchodankar/torque-360/issues"
   },

@@ -111,7 +111,7 @@ router.get("/search", (req, res) =>
   res.render("searchCar", { user: req.user })
 );
 
-router.post("/searchCar", function(req, res) {
+router.post("/search", function(req, res) {
   const {model}  = req.body;
   Cars.find({ model: model }, function(err, data) {
     if (data == ``) {

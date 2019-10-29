@@ -12,7 +12,7 @@
               type="firstname"
               id="firstname"
               name="firstname"
-              class="form-control"
+              class="form-control text-center"
               placeholder="Enter First Name"
               value="<%= typeof firstname != 'undefined' ? firstname : '' %>"
             />
@@ -22,7 +22,7 @@
               type="lastname"
               id="lastname"
               name="lastname"
-              class="form-control"
+              class="form-control text-center"
               placeholder="Enter Last Name"
               value="<%= typeof lastname != 'undefined' ? lastname : '' %>"
             />
@@ -32,7 +32,7 @@
               type="phonenumber"
               id="phonename"
               name="phonenumber"
-              class="form-control"
+              class="form-control text-center"
               placeholder="Enter Phone Number"
               value="<%= typeof phonenumber != 'undefined' ? phonenumber : '' %>"
             />
@@ -42,7 +42,7 @@
               type="email"
               id="email"
               name="email"
-              class="form-control"
+              class="form-control text-center"
               placeholder="Enter Email"
               value="<%= typeof email != 'undefined' ? email : '' %>"
             />
@@ -52,7 +52,7 @@
               type="password"
               id="password"
               name="password"
-              class="form-control"
+              class="form-control text-center"
               placeholder="Enter Password"
               value="<%= typeof password != 'undefined' ? password : '' %>"
             />
@@ -62,7 +62,7 @@
               type="password"
               id="password2"
               name="password2"
-              class="form-control"
+              class="form-control text-center"
               placeholder="Confirm Password"
               value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
             />
@@ -72,7 +72,7 @@
               type="adminsecret"
               id="adminsecret"
               name="adminsecret"
-              class="form-control"
+              class="form-control text-center"
               placeholder="Enter Admin Secret Code"
               value="<%= typeof adminsecret != 'undefined' ? adminsecret : '' %>"
             />
@@ -81,8 +81,11 @@
             Register
           </button>
         </form>
-        <p class="lead mt-4">
+        <p class="lead mt-4 text-center">
           Have An Account? <a href="/admin/login">Login Now</a>
+        </p>
+        <p class="lead text-center">
+          Not an admin? <a href="/user/login">Register Now</a>
         </p>
       </div>
     </div>

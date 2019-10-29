@@ -10,7 +10,7 @@ router.get("/add", ensureAuthenticated, (req, res) =>
   res.render("addCar", { user: req.user })
 );
 
-router.post("/add", (req, res) => {
+router.post("/add", ensureAuthenticated, (req, res) => {
   let editor = req.user.email;
 
   const {

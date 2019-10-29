@@ -8,11 +8,13 @@ const User = require("../models/User");
 // Login Page
 router.get("/login", (req, res) =>
   // res.render("login", { user: req.user, res: res })
-  res.send("User Login")
+  res.render("loginUser", { user: req.user })
 );
 
 // Register Page
 router.get("/register", (req, res) =>
   // res.render("register", { user: req.user, res: res })
-  res.send("User Register")
+  res.render("registerUser", { user: req.user })
 );
+
+module.exports = router;

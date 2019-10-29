@@ -32,6 +32,7 @@ router.post("/register", (req, res) => {
     password2,
     adminsecret
   } = req.body;
+
   let errors = [];
   // Check Required Fields
 
@@ -66,10 +67,10 @@ router.post("/register", (req, res) => {
   }
 
   // Check if phone number is less than 7 digits
-  // if (phonenumber / 10000000 <= 0) {
-  //   errors.push({ msg: "Phone Number should be atleast 7 digits." });
-  // }
-  
+  if (phonenumber / 10000000 <= 1) {
+    errors.push({ msg: "Phone Number should be atleast 7 digits." });
+  }
+
   // Check if password length > 6
   if (password.length < 6) {
     errors.push({ msg: "Password should be atleast 6 characters." });

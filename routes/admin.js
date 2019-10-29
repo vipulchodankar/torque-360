@@ -15,6 +15,14 @@ router.get("/register", (req, res) =>
   res.render("register", { user: req.user, res: res })
 );
 
+function validate(name){    
+  var re = /^[A-Za-z]+$/;
+  if(re.test(name))
+     return 1;
+  else
+     return 0;
+}
+
 // Register Request
 router.post("/register", (req, res) => {
   const {
@@ -33,7 +41,7 @@ router.post("/register", (req, res) => {
     errors.push({ msg: "You cannot become an admin! Sed." });
   }
 
-  if (!firstname || !lastname || !email || !password || !password2) {
+  if (!firstname || !lastname || !email || !phonenumber || !password || !password2) {
     errors.push({ msg: "Please fill in all fields." });
   }
 
@@ -42,6 +50,17 @@ router.post("/register", (req, res) => {
     errors.push({ msg: "Passwords do not match." });
   }
 
+  if(!validate(firstname)){
+    errors.push({msg: 'Firstname must only contain alphabets.'})
+  }
+
+  if(!validate(lastname)){
+    errors.push({msg: 'Firstname must only contain alphabets.'})
+  }
+
+  if(phonenumber / 10000000 <= 0) {
+    errors.push({msg: 'Phone Number should be atleast 7 digits'});
+  }
   // Check if password length > 6
   if (password.length < 6) {
     errors.push({ msg: "Password should be atleast 6 characters." });

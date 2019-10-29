@@ -19,6 +19,7 @@ const AdminSchema = new mongoose.Schema({
   },
   phonenumber: {
     type: Number,
+    required: true
   },
   date: {
     type: Date,

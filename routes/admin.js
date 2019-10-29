@@ -56,19 +56,20 @@ router.post("/register", (req, res) => {
   }
 
   // Check if firstname contains number
-  if (containsNumber(firstname)) {
+  if (containsNumber(String(firstname))) {
     errors.push({ msg: "Firstname must only contain alphabets." });
   }
 
   // Check if lastname contains number
-  if (containsNumber(lastname)) {
+  if (containsNumber(String(lastname))) {
     errors.push({ msg: "Lastname must only contain alphabets." });
   }
 
   // Check if phone number is less than 7 digits
-  if (phonenumber / 10000000 <= 0) {
-    errors.push({ msg: "Phone Number should be atleast 7 digits" });
-  }
+  // if (phonenumber / 10000000 <= 0) {
+  //   errors.push({ msg: "Phone Number should be atleast 7 digits." });
+  // }
+  
   // Check if password length > 6
   if (password.length < 6) {
     errors.push({ msg: "Password should be atleast 6 characters." });

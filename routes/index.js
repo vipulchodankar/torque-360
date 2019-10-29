@@ -14,7 +14,8 @@ router.get("/dashboard", ensureAuthenticated, (req, res) =>
 router.get("*", (req, res) => {
   res.render("404", {
     link: "/",
-    msg: "View Home?"
+    msg: "View Home?",
+    user: req.user
   });
 });
 

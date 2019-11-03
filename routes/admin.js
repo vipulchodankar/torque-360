@@ -15,11 +15,11 @@ router.get("/register", (req, res) =>
   res.render("register", { user: req.user, res: res })
 );
 
-function containsNumber(name) {
-  var re = /\d/;
-  if (re.test(name)) return 1;
-  else return 0;
-}
+// function containsNumber(name) {
+//   var re = /\d/;
+//   if (re.test(name)) return 1;
+//   else return 0;
+// }
 
 // Register Request
 router.post("/register", (req, res) => {
@@ -56,20 +56,20 @@ router.post("/register", (req, res) => {
     errors.push({ msg: "Passwords do not match." });
   }
 
-  // Check if firstname contains number
-  if (containsNumber(String(firstname))) {
-    errors.push({ msg: "Firstname must only contain alphabets." });
-  }
+  // // Check if firstname contains number
+  // if (containsNumber(String(firstname))) {
+  //   errors.push({ msg: "Firstname must only contain alphabets." });
+  // }
 
-  // Check if lastname contains number
-  if (containsNumber(String(lastname))) {
-    errors.push({ msg: "Lastname must only contain alphabets." });
-  }
+  // // Check if lastname contains number
+  // if (containsNumber(String(lastname))) {
+  //   errors.push({ msg: "Lastname must only contain alphabets." });
+  // }
 
-  // Check if phone number is less than 7 digits
-  if (phonenumber / 10000000 <= 1) {
-    errors.push({ msg: "Phone Number should be atleast 7 digits." });
-  }
+  // // Check if phone number is less than 7 digits
+  // if (Number(phonenumber) / 10000000 <= 1) {
+  //   errors.push({ msg: "Phone Number should be atleast 7 digits." });
+  // }
 
   // Check if password length > 6
   if (password.length < 6) {
